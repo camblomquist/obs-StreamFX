@@ -412,9 +412,9 @@ void autoframing_instance::video_tick(float seconds)
 		_out_size = _size;
 		if (_frame_aspect_ratio > 0.0) {
 			if (width > height) {
-				_out_size.first = static_cast<uint32_t>(std::lroundf(static_cast<float>(_out_size.second) * _frame_aspect_ratio), 0, std::numeric_limits<uint32_t>::max());
+                _out_size.first = static_cast<uint32_t>(std::lroundf(static_cast<float>(_out_size.second) * _frame_aspect_ratio));
 			} else {
-				_out_size.second = static_cast<uint32_t>(std::lroundf(static_cast<float>(_out_size.first) * _frame_aspect_ratio), 0, std::numeric_limits<uint32_t>::max());
+				_out_size.second = static_cast<uint32_t>(std::lroundf(static_cast<float>(_out_size.first) * _frame_aspect_ratio));
 			}
 		}
 	}
